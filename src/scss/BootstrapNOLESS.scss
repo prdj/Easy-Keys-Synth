@@ -1,0 +1,87 @@
+*{ 
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root,
+.app {
+  margin: 0;
+  width: 100%;
+}
+
+.nav-list {
+    background: linear-gradient(to left, rgb(32, 45, 71), rgb(230, 230, 230) 80%, #eee 88%, rgb(47, 50, 102) 100%);
+    box-shadow: 0px 0px 10px rgb(51, 51, 53);
+    border-radius: 0.1rem;  
+    margin: 0;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
+ 
+}
+
+.logo {
+    
+  font-family: 'Bebas Neue', cursive;
+  color: white;
+
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items:flex-end;
+  align-content: center;
+
+  h1 {
+    margin:0;
+    padding:0;
+    font-size: 40px;
+    letter-spacing: 1px;
+    text-shadow: -1px -2px 0 rgb(36, 31, 31);
+  }
+
+  h2 {
+    
+    margin-left: 5px;
+    margin-bottom: -4px; 
+    font-size: 20px;           
+    letter-spacing: 3px;
+    text-shadow: -1px -2px 0 rgb(36, 31, 31);
+  }
+ 
+ 
+}
+
+
+.nav-item{
+
+  list-style: none;
+  font-family: 'Bayon', sans-serif;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: rgb(41, 41, 48);
+
+}
+
+.nav-item:first-child{
+  margin-right: auto;
+
+}
+
+button{
+  font-family: 'Bayon', sans-serif;
+  font-size: 1rem;
+
+}
+
+
+
+
+
+

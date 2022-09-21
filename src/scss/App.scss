@@ -1,0 +1,226 @@
+@import 'BootstrapNOLESS';
+@import url('https://fonts.googleapis.com/css2?family=Cute+Font&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bayon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Text:wght@700&display=swap');
+
+
+.main {
+    height: 100%;
+    position: relative;
+
+    .homepage {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        section {
+            display: flex;
+            min-height: 80vh;
+            overflow: hidden;
+        }
+
+        .home {
+            font-family: 'Bayon', sans-serif;
+            text-transform: uppercase;
+            font-weight: 400;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .producto {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .polysynth {
+                display: flex;
+                background-color: black;
+                justify-content: flex-start;
+          }
+          
+
+        }
+
+
+        .contact {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Bayon', sans-serif;
+            flex-flow: wrap;
+
+
+            .getingInTouch {
+                display: flex;
+                h1 {
+                    font-size: 30px;
+                    letter-spacing: 2px;
+                    text-decoration: underline;
+                }
+            }
+
+            .contactDiv {
+                display: flex;
+                flex-direction: column;
+                align-content: space-between;
+                flex-wrap: nowrap;
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+                padding: 3.4rem;
+                margin-bottom: 1rem;
+
+                .form-signin {
+                    font-size: 20px;
+                    background-color: rgba(0, 112, 186, 0.844);
+                    min-width: 400px;
+                    height: 500px;
+                    border-radius: 4px;
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: nowrap;
+                    justify-content: space-evenly;
+
+
+                    div {
+                        display: flex;
+                        justify-content: space-evenly;
+
+
+                        label {
+                            display: flex;
+                        }
+
+                        input {
+                            max-width: 100%;
+                            font-size: 22px;
+                            border-radius: 3px;
+                            font-size: 20px;
+                        }
+
+                        textarea {
+                            font-size: 20px;
+                            max-width: 100%;
+                            height: 160px;
+                            border-radius: 5px;
+                            border-width: 2px;
+                            border-style: inset;
+                            border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+                            border-image: initial;
+                        }
+                    }
+
+                    button {
+                        width: 80px;
+                        display: block;
+                        font-family: 'Bayon', sans-serif;
+                    }
+                }
+
+                @media screen and (max-width: 425px) {
+                    .form-signin {
+                        min-width: 90%;
+                        height: 400px;
+
+                        div {
+                            input {
+                                max-width: 70%;
+                                font-size: 15px;
+
+                            }
+
+                            textarea {
+                                max-width: 60%;
+                                font-size: 15px;
+
+                            }
+                        }
+
+                    }
+
+                }
+
+                .paypal {
+                    margin-top: 80px;
+                    display: flex;
+                    max-width: 700px;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    .donation-text {
+                        display: block;
+
+                        h1 {
+                            font-size: 20px;
+                            letter-spacing: 2px;
+
+                        }
+
+                        h2 {
+                            line-height: 60px;
+                            -webkit-text-stroke: 1px black;
+
+                            color: white;
+                            margin: 0;
+                            letter-spacing: 2px;
+                            font-size: 25px;
+                            letter-spacing: 5px;
+
+                        }
+
+                        p {
+                            letter-spacing: 2px;
+
+                        }
+                    }
+
+                    div.papal-component {
+                        display: flex;
+                        min-width: inherit;
+                        flex-direction: column;
+                        align-self: flex-end;
+
+                        input {
+                            margin-left: 115px;
+                            height: 35px;
+                            margin-bottom: 8px;
+
+                        }
+                    }
+
+
+                    @media screen and (max-width: 425px) {
+                        .paypal {
+
+                            max-width: 700px;
+                        }
+
+
+                    }
+
+
+                }
+            }
+
+            .footer {
+                display: flex;
+                width: 100%;
+                padding: 0.4rem;
+                padding-left: 1rem;
+                background-color: rgb(235, 195, 64);
+                bottom: 0;
+                left: 0;
+                right: 0;
+
+            }
+
+        }
+
+    }
+
+
+}

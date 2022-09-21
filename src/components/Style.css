@@ -1,0 +1,36 @@
+button.activeWhite{
+        background: #CCC;    
+}
+
+button.activeBlack{
+        background: #333;
+}
+
+div.myCanvas2 {
+        display: flex;
+        z-index: 1;
+}
+
+div.vh{
+      
+        display: flex;
+        justify-content: center;
+        font-size:12px;
+        font-family: 'Bayon', sans-serif;
+        background-color: rgb(87, 78, 78);
+        border-radius: 2px;
+        border:3px solid rgb(0, 0, 0);
+        z-index: 1;
+       
+}
+
+
+div.myCanvas1{
+        display: flex;
+        flex-direction: column;
+        width: 60px;
+        height: 180px;
+      
+        
+
+}
