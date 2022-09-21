@@ -1,13 +1,13 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Octave from "./Octave";
-import Volume from "./Volume";
-import Canvas2 from "./Visualizer";
-import RadioButtons from './SynthType';
-import ENV from './ENV';
-import LFO from './LFO';
-import Filter from './Filter';
-import VH from "./VH";
+import Octave from "../keyboard/Octave";
+import Volume from "../panel/Volume";
+import Canvas2 from "../panel/Visualizer";
+import RadioButtons from '../panel/SynthType';
+import ENV from '../panel/ENV';
+import LFO from '../panel/LFO';
+import Filter from '../panel/Filter';
+import VH from "../panel/VH";
 
 
 const useStyles = makeStyles({

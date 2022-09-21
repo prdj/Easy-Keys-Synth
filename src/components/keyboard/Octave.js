@@ -1,10 +1,10 @@
 import { arrayNotes } from "./Format";
 import styled from "styled-components";
-import Note from "./Note";
-import KeyFunctions from "./KeyFunctions";
-import React, { useEffect, useContext, useState } from "react";
-import { SoundContext } from "../context/SoundContext";
-import { CTX } from "../context/Store";
+import Note from "../keyboard/Note";
+import KeyFunctions from "../keyboard/KeyFunctions";
+import React, { useEffect, useContext} from "react";
+import { SoundContext } from "../../context/SoundContext";
+import { CTX } from "../../context/Store";
 
 
 // Creating the keyboard
@@ -51,36 +51,24 @@ const KEYBOARD_KEYS = [
   "ä",
 ];
 
-
 const Octave = () => {
   // STORE FROM REDUCE
-  const [appState, updateState] = useContext(CTX);
-  let { type, frequency, detune } = appState.osc1Settings;
+  const [updateState] = useContext(CTX);
+  //let { type, frequency, detune } = appState.osc1Settings;
   // SOUND CONTEX
   let {
-    velocity,
-    setVelocity,
-    midiNote,
-    setMidiNote,
-    command,
-    setCommand,
     waveType,
     volume,
     setKeyPressed,
     setAnalyser,
-    bufferLength,
     setBufferLength,
-    dataArray,
     setDataArray,
   } = useContext(SoundContext);
 
   // SETTING UP AUDIO CONTEXT API
   let audioCtx = new AudioContext();
-  let out = audioCtx.destination;
-
 
   useEffect(() => {
-
 
     // KEY DOWN EVENT 
     document.addEventListener("keydown", (e) => {
@@ -88,7 +76,7 @@ const Octave = () => {
       if (e.repeat) return;
 
       //MAPPING KEYBOARD KEYS
-      const { timeStamp, key } = e;
+      const { key } = e;
 
       let Index = KEYBOARD_KEYS.indexOf(key);
       if (Index === -1) {
@@ -148,7 +136,6 @@ const Octave = () => {
       setDataArray(dataArray);
       setAnalyser(analyser);
 
-
       function playNote() {
         NoteForClass.value.length === 1
           ? NoteForClass.classList.add("activeWhite")
@@ -199,29 +186,25 @@ const Octave = () => {
   }, [volume]);
 
 
-  const onKeyDown = () => {
-    
-  }
-
   return (
     <div className="octave">
-     
-        <PianoBody>
-          <Wrapper>
-            <div>
-              {arrayNotes.map((element) => (
-                <Note
-                  note={element.note}
-                  color={element.color}
-                  pitchNumber={element.pitchNumber}
-                  number={element.number}
-                />
-              ))}
-            </div>
-          </Wrapper>
-          <KeyFunctions></KeyFunctions>
-        </PianoBody>
-  
+
+      <PianoBody>
+        <Wrapper>
+          <div>
+            {arrayNotes.map((element) => (
+              <Note
+                note={element.note}
+                color={element.color}
+                pitchNumber={element.pitchNumber}
+                number={element.number}
+              />
+            ))}
+          </div>
+        </Wrapper>
+        <KeyFunctions></KeyFunctions>
+      </PianoBody>
+
     </div>
   );
 };

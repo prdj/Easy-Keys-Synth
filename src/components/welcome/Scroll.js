@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { makeStyles } from "@material-ui/core/styles";
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import { IconButton } from '@material-ui/core';
@@ -30,18 +30,23 @@ const Scroll = () => {
 
     console.log(show)
 
-    const handleScroll = () => {
-        console.log(window.pageYOffset)
+    const handleScroll = useCallback(
+        () => {
+            console.log(window.pageYOffset)
 
-        if (window.pageYOffset > showBelow) {
-            if (!show) setShow(true)
-        } else {
-            if (show) setShow(false)
-        }
-        if (window.pageYOffset < showBelow) {
-            setShow(false)
-        }
-    }
+            if (window.pageYOffset > showBelow) {
+                if (!show) setShow(true)
+            } else {
+                if (show) setShow(false)
+            }
+            if (window.pageYOffset < showBelow) {
+                setShow(false)
+            }
+        },
+        [show]
+    )
+
+ 
 
     const handleClick = () => {
 
@@ -53,7 +58,7 @@ const Scroll = () => {
             window.addEventListener(`scroll`, handleScroll)
             return () => window.removeEventListener(`scroll`, handleScroll)
         }
-    }, []);
+    }, [handleScroll]);
 
 
     return (
@@ -62,7 +67,6 @@ const Scroll = () => {
             <IconButton onClick={handleClick} className={classes.toTop}>
                 <ExpandLessIcon/>
             </IconButton>
-             
             }
         </div>
     )

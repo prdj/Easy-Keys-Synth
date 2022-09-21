@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useContext } from "react";
-import { SoundContext } from "../context/SoundContext";
-import './Style.css';
+import { SoundContext } from "../../context/SoundContext";
+import '../Style.css';
 
 const VH = (props) => {
   let { analyser, dataArray, bufferLength } = useContext(SoundContext);

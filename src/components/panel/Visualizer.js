@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useContext } from "react";
-import { SoundContext } from "../context/SoundContext";
+import { SoundContext } from "../../context/SoundContext";
 import { makeStyles } from "@material-ui/core/styles";
 import Grille from "./Grille";
 

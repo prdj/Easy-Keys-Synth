@@ -2,9 +2,9 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 //import  { BrowserRouter, HashRouter, Switch, Route, Router } from "react-router-dom";
 
-import Homepage from "./Homepage";
-import Nav from "./Nav";
-import Scroll from "./Scroll";
+import Homepage from "./welcome/Homepage";
+import Nav from "./welcome/Nav";
+import Scroll from "./welcome/Scroll";
 
 function App() {
 

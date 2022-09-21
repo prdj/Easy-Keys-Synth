@@ -1,6 +1,6 @@
 import React from 'react';
-import Osc from '../components/OscFactory';
-import Lfo from '../components/LfoFactory';
+import Osc from '../components/keyboard/OscFactory';
+import Lfo from '../components/keyboard/LfoFactory';
 
 let actx = new AudioContext();
 let out = actx.destination;

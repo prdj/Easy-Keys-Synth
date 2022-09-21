@@ -1,5 +1,5 @@
 import React, { createContext, useState, useRef } from "react";
-import { arrayNotes } from "../components/Format";
+import { arrayNotes } from "../components/keyboard/Format";
 
 // CONTEXT
 // PROVIDER

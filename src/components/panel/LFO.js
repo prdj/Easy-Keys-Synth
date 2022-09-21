@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext} from "react";
 import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -14,7 +14,7 @@ import { mdiSquareWave } from '@mdi/js';
 import { mdiTriangleWave } from '@mdi/js';
 
 
-import { CTX } from '../context/Store';
+import { CTX } from '../../context/Store';
 
 const useStyles = makeStyles({
   root: {

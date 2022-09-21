@@ -28,7 +28,6 @@ const contactEmail = nodemailer.createTransport({
 });
 
 
-
 router.post("/", (req, res) => {
     const name = req.body.name;
     const email = req.body.email;

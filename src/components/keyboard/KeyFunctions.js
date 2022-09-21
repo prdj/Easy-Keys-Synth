@@ -18,7 +18,6 @@ const Next = styled.button`
     background: #1c1c1c;
   }
 `;
-
 const Previous = styled.button`
   width: 30px;
   height: 21px;
@@ -43,14 +42,29 @@ function KeyFunction() {
     boxSize: [200, 200, 200, 200, 200, 200, 181],
   };
 
+  //STATE
+
   const [counter, setCounter] = useState(2);
-  /*   console.log(count); */
+
   const [position, setPosition] = useState(340);
-  /* console.log(position); */
+ 
   const [boxSize, setboxSize] = useState(200);
-   console.log(boxSize);
+
+  const KeysOn = styled.div`
+  pointer-events: none;
+  border: 3px solid blue;
+  width: ${boxSize}px;
+  height: 65px;
+  position: relative;
+  top: -71px;
+  left: ${position}px;
+  z-index: 1;
+  `;
+
+  //CALLBACK
 
   const handleUserKeyPress = useCallback(
+    
     (event) => {
       const { keyCode } = event;
 
@@ -65,14 +79,6 @@ function KeyFunction() {
     },
     [counter]
   );
-
-  useEffect(() => {
-    window.addEventListener("keydown", handleUserKeyPress);
-
-    return () => {
-      window.removeEventListener("keydown", handleUserKeyPress);
-    };
-  }, [handleUserKeyPress]);
 
   const decrementOctave = () => {
     if (counter <= 1) {
@@ -99,16 +105,14 @@ function KeyFunction() {
     }
   };
 
-  const KeysOn = styled.div`
-    pointer-events: none;
-    border: 3px solid blue;
-    width: ${boxSize}px;
-    height: 65px;
-    position: relative;
-    top: -71px;
-    left: ${position}px;
-    z-index: 1;
-  `;
+  useEffect(() => {
+    window.addEventListener("keydown", handleUserKeyPress);
+
+    return () => {
+      window.removeEventListener("keydown", handleUserKeyPress);
+    };
+  }, [handleUserKeyPress]);
+
 
   return (
     <div>

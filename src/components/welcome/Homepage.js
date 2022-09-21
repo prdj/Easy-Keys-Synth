@@ -1,25 +1,16 @@
-import React, { useState } from "react";
-import Products from "./Products";
-import ContactForm from './ContacForm';
-import PayPal from './PayPal';
-import Footer from "./Footer";
-
-//import Paypal from "./initPayPalButton.js"; 
-
-
+import React from "react";
+import Products from "../keyboard/Products";
+import ContactForm from '../contact_form/ContacForm';
+import PayPal from '../donation/PayPal';
+import Footer from "../donation/Footer";
 
 const Homepage = () => {
-
-  const [checkout, setCheckOut] = useState(false);
 
   return (
     <div className="homepage">
       <section className="producto">
-
         <Products></Products>
-
       </section>
-
       <section id="contact-section" className="contact">
 
         <div className="contactDiv">
@@ -32,7 +23,6 @@ const Homepage = () => {
             <ContactForm></ContactForm>
 
           </section>
-
 
           <div className="paypal">
 
@@ -48,8 +38,8 @@ const Homepage = () => {
 
         <Footer></Footer>
 
-
       </section>
+
     </div>
   );
 };

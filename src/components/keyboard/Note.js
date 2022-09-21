@@ -1,5 +1,5 @@
 import React from 'react';
-import './Style.css';
+import '../Style.css';
 import styled from 'styled-components';
 
 const Black = styled.button`
