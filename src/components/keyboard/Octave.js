@@ -30,7 +30,7 @@ const Wrapper = styled.div`
 let vco;
 let nodes = [];
 let activeSynths = [];
-const KEYBOARD_KEYS = [
+const COMPUTER_KEYBOARD_KEYS = [
   "a",
   "w",
   "s",
@@ -53,9 +53,13 @@ const KEYBOARD_KEYS = [
 
 const Octave = () => {
   // STORE FROM REDUCE
-  const [updateState] = useContext(CTX);
+  const [appState, updateState] = useContext(CTX);
   //let { type, frequency, detune } = appState.osc1Settings;
   // SOUND CONTEX
+
+  // SETTING UP AUDIO CONTEXT API
+  let audioCtx = new AudioContext();
+
   let {
     waveType,
     volume,
@@ -65,8 +69,6 @@ const Octave = () => {
     setDataArray,
   } = useContext(SoundContext);
 
-  // SETTING UP AUDIO CONTEXT API
-  let audioCtx = new AudioContext();
 
   useEffect(() => {
 
@@ -78,7 +80,7 @@ const Octave = () => {
       //MAPPING KEYBOARD KEYS
       const { key } = e;
 
-      let Index = KEYBOARD_KEYS.indexOf(key);
+      let Index = COMPUTER_KEYBOARD_KEYS.indexOf(key);
       if (Index === -1) {
         return;
       }
@@ -109,7 +111,7 @@ const Octave = () => {
         vco.type = item.type;
         vco.frequency.value = item.pitchNumber;
         nodes.push(vco);
-        vco.start(0);
+        //vco.start(0);
       });
 
       // PLAYING
@@ -150,13 +152,13 @@ const Octave = () => {
 
       if (e.repeat) return;
       const key = e.key;
-      const keyboardKeysIndex = KEYBOARD_KEYS.indexOf(key);
+      const keyboardKeysIndex = COMPUTER_KEYBOARD_KEYS.indexOf(key);
       const noteAudio = document.getElementsByTagName("button");
       const NoteForClass = noteAudio[keyboardKeysIndex];
       let indexMap = keyboardKeysIndex.toString();
       if (!NoteForClass || !waveType) return;
 
-      let Index = KEYBOARD_KEYS.indexOf(key);
+      let Index = COMPUTER_KEYBOARD_KEYS.indexOf(key);
       if (Index === -1) {
         return;
       }
